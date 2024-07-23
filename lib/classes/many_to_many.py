@@ -133,8 +133,13 @@ class Venue:
     def add_band(self, band):
         if isinstance(band, Band):
             self._bands.add(band)
-
         else:
             raise ValueError
-        
+    
+    def concert_on(self, date):
+        for concert in self.concerts():
+            if concert.date == date:
+                return concert
+            else:
+                return None
     

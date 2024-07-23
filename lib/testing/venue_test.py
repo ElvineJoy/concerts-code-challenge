@@ -133,14 +133,14 @@ class TestVenue:
         assert band_1 in venue_1.bands()
         assert band_2 in venue_1.bands()
 
-    # def test_concert_on(self):
-    #     """returns the first concert on that date or None if no concerts exist"""
-    #     band = Band(name="boygenius", hometown="NYC")
-    #     venue = Venue(name="Theatre", city="NYC")
-    #     venue2 = Venue(name="Ace of Spades", city="SAC")
-    #     band.play_in_venue(venue=venue, date="Nov 22")
-    #     band.play_in_venue(venue=venue2, date="Nov 27")
+    def test_concert_on(self):
+        """returns the first concert on that date or None if no concerts exist"""
+        band = Band(name="boygenius", hometown="NYC")
+        venue = Venue(name="Theatre", city="NYC")
+        venue2 = Venue(name="Ace of Spades", city="SAC")
+        band.play_in_venue(venue=venue, date="Nov 22")
+        band.play_in_venue(venue=venue2, date="Nov 27")
 
-    #     assert venue.concert_on("Nov 22") == band.concerts()[0]
-    #     assert venue2.concert_on("Nov 27") == band.concerts()[1]
-    #     assert venue.concert_on("Nov 25") is None
+        assert venue.concert_on("Nov 22") == band.concerts()[0]
+        assert venue2.concert_on("Nov 27") == band.concerts()[1]
+        assert venue.concert_on("Nov 25") is None
