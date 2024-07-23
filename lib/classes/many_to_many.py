@@ -83,10 +83,11 @@ class Concert:
         return self._date
     
     @date.setter
-    def date(self, value):
-        if not isinstance(value, str) and len(value) > 0:
+    def date(self, date):
+        if isinstance(date, str) and len(date) > 0:
+            self._date = date
+        else:
             raise Exception
-        self._date = value
 
     def hometown_show(self):
         return self.venue.city == self.band.hometown 
